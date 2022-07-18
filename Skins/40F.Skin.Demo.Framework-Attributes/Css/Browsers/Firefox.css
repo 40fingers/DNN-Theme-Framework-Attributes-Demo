@@ -1,0 +1,1 @@
+section.main:before{content:"Message from CSS: FIREFOX!"; display:inline-block; color:#f80; padding: 1em 0; font-weight:bold;}
