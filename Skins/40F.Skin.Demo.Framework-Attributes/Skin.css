@@ -1,0 +1,27 @@
+@import url(Base/Base.css);
+
+/* Demo CSS: */
+.Example{color:#00d; margin-bottom:2em;}
+
+.FrameworkAttributes *{box-sizing:border-box;}
+.FrameworkAttributes h4{color:#000; background:#ddd; padding:0.5em; margin:0;}
+.FrameworkAttributes .Item:after{content:".";      visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;}
+.FrameworkAttributes .Item{border:solid 1px #eee; margin-bottom:1.5em;}
+.FrameworkAttributes .Token, .FrameworkAttributes .Example{padding:0.75em;}
+.FrameworkAttributes .Token{color:#279FEA;}
+.FrameworkAttributes .Example{color:#005B93;}
+.FrameworkAttributes .Item > div {border-top:solid 1px #eee;}
+
+.FrameworkAttributes .Token{white-space: pre-wrap ; font-family:monospace; font-size:0.9em;}
+
+
+
+/* For the Menu that only shows siblings and parent */
+.ShowOnlyParentAndSiblings li{display:none;}
+.ShowOnlyParentAndSiblings li.Active{display:list-item;}
+.ShowOnlyParentAndSiblings li.Active > ul > li{display:list-item;}
