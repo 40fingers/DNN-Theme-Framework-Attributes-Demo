@@ -115,6 +115,8 @@
                 <h4>Is Current Administrator?</h4>
                 
                  <div class="Token">DotNetNuke.Security.PortalSecurity.IsInRoles(PortalSettings.AdministratorRoleName)</div>
+				  <div class="Example"><%=DotNetNuke.Security.PortalSecurity.IsInRoles(PortalSettings.AdministratorRoleName)%></div>
+				  <div class="Token">You are &lt;%If NOT DotNetNuke.Security.PortalSecurity.IsInRoles(PortalSettings.AdministratorRoleName)%&gt;NOT&lt;%End If%&gt; an Administrator</div>
                 <div class="Example">You are <%If NOT DotNetNuke.Security.PortalSecurity.IsInRoles(PortalSettings.AdministratorRoleName)%>NOT<%End If%> an Administrator</div>
             </div>
 			
