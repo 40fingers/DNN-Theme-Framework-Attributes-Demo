@@ -128,6 +128,25 @@
                  <div class="Token">You are &lt;%If NOT UserController.GetCurrentUserInfo().IsSuperUser%&gt;NOT&lt;%End If%&gt; a Superuser</div>
                 <div class="Example">You are <%If NOT UserController.GetCurrentUserInfo().IsSuperUser%>NOT<%End If%> a Superuser</div>
             </div>
+
+            <div class="Item">
+                <h4>User is a member of Roles..</h4>
+                <div class="Token">
+                Dim myRoles as String = "TestRole1;TestRole2;TestRole3"
+                If DotNetNuke.Security.PortalSecurity.IsInRoles(PortalSettings.AdministratorRoleName) Then
+                ...
+                End If
+                </div>
+                <div class="Example">
+                <% Dim myRoles as String = "TestRole1;TestRole2;TestRole3"
+                 If DotNetNuke.Security.PortalSecurity.IsInRoles(myRoles) Then
+                %>
+                    You are a member of Roles: <%=myRoles%>
+                <% Else %>
+                    You are NOT a member of Roles: <%=myRoles%>
+                <%End If%>
+            </div>
+            </div>
 			
         </div>
 			
