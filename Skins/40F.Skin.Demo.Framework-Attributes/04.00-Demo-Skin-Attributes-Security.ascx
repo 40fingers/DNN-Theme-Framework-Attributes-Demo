@@ -28,14 +28,14 @@
             <h2>User</h2>
             <div class="Item">
                 <h4>Currently logged in UserName</h4>
-                <div class="Token">UserController.GetCurrentUserInfo().Username</div>
-                <div class="Example"><%= UserController.GetCurrentUserInfo().Username %></div>
+                <div class="Token">UserController.Instance.GetCurrentUserInfo().Username</div>
+                <div class="Example"><%= UserController.Instance.GetCurrentUserInfo().Username %></div>
             </div>
 
             <div class="Item">
                 <h4>Currently logged in User Display Name</h4>
-                <div class="Token">UserController.GetCurrentUserInfo().Displayname</div>
-                <div class="Example"><%=UserController.GetCurrentUserInfo().Displayname%></div>
+                <div class="Token">UserController.Instance.GetCurrentUserInfo().Displayname</div>
+                <div class="Example"><%=UserController.Instance.GetCurrentUserInfo().Displayname%></div>
             </div>
 
             <div class="Item">
@@ -46,16 +46,16 @@
 
             <div class="Item">
                 <h4>Link to User Account Page</h4>
-                <div class="Token">Dim objUserInfo2 As UserInfo = UserController.GetCurrentUserInfo
+                <div class="Token">Dim objUserInfo2 As UserInfo = UserController.Instance.GetCurrentUserInfo
 					If objUserInfo2.UserID <> -1 Then
-						Dim sMyAccountLink = NavigateURL(PortalSettings.UserTabId, "Profile", "userId=" & UserController.GetCurrentUserInfo().UserID, "pageno=1")
+						Dim sMyAccountLink = NavigateURL(PortalSettings.UserTabId, "Profile", "userId=" & UserController.Instance.GetCurrentUserInfo().UserID, "pageno=1")
 						Response.Write(String.Format("<a href='{0}'>Your Account</a>", sMyAccountLink))
 					End If</div>
                 <div class="Example">
                     <%                  
-                    Dim objUserInfo2 As UserInfo = UserController.GetCurrentUserInfo
+                    Dim objUserInfo2 As UserInfo = UserController.Instance.GetCurrentUserInfo
                     If objUserInfo2.UserID <> -1 Then
-                        Dim sMyAccountLink = NavigateURL(PortalSettings.UserTabId, "Profile", "userId=" & UserController.GetCurrentUserInfo().UserID, "pageno=1")
+                        Dim sMyAccountLink = NavigateURL(PortalSettings.UserTabId, "Profile", "userId=" & UserController.Instance.GetCurrentUserInfo().UserID, "pageno=1")
                         Response.Write(String.Format("<a href='{0}'>Your Account</a>", sMyAccountLink))
                     End If
                     %>
@@ -64,51 +64,51 @@
 
             <div class="Item">
                 <h4>Current User Creation Date</h4>
-                <div class="Token">UserController.GetCurrentUserInfo().CreatedOnDate</div>
-                <div class="Example"><%=UserController.GetCurrentUserInfo().CreatedOnDate%></div>
+                <div class="Token">UserController.Instance.GetCurrentUserInfo().CreatedOnDate</div>
+                <div class="Example"><%=UserController.Instance.GetCurrentUserInfo().CreatedOnDate%></div>
             </div>
 
             <div class="Item">
                 <h4>Current User Email</h4>
-                <div class="Token">UserController.GetCurrentUserInfo().Email</div>
-                <div class="Example"><%=UserController.GetCurrentUserInfo().Email%></div>
+                <div class="Token">UserController.Instance.GetCurrentUserInfo().Email</div>
+                <div class="Example"><%=UserController.Instance.GetCurrentUserInfo().Email%></div>
             </div>
 
             <div class="Item">
                 <h4>Current User FirstName</h4>
-                <div class="Token">UserController.GetCurrentUserInfo().FirstName</div>
-                <div class="Example"><%=UserController.GetCurrentUserInfo().FirstName%></div>
+                <div class="Token">UserController.Instance.GetCurrentUserInfo().FirstName</div>
+                <div class="Example"><%=UserController.Instance.GetCurrentUserInfo().FirstName%></div>
             </div>
 
             <div class="Item">
                 <h4>Current User LastName</h4>
-                <div class="Token">UserController.GetCurrentUserInfo().LastName</div>
-                <div class="Example"><%=UserController.GetCurrentUserInfo().LastName%>></div>
+                <div class="Token">UserController.Instance.GetCurrentUserInfo().LastName</div>
+                <div class="Example"><%=UserController.Instance.GetCurrentUserInfo().LastName%>></div>
             </div>
 
             <div class="Item">
                 <h4>Current User Id</h4>
-                <div class="Token">UserController.GetCurrentUserInfo().UserID</div>
-                <div class="Example"><%=UserController.GetCurrentUserInfo().UserID%></div>
+                <div class="Token">UserController.Instance.GetCurrentUserInfo().UserID</div>
+                <div class="Example"><%=UserController.Instance.GetCurrentUserInfo().UserID%></div>
             </div>
 
 
             <div class="Item">
                 <h4>Current User Profile Properties</h4>
-                <div class="Token">UserController.GetCurrentUserInfo().Profile.GetPropertyValue("Property")</div>
+                <div class="Token">UserController.Instance.GetCurrentUserInfo().Profile.GetPropertyValue("Property")</div>
                    
                 <div class="Example">
-                     FirstName: <% = UserController.GetCurrentUserInfo().Profile.GetPropertyValue("FirstName")%><br />
-                    LastName: <% = UserController.GetCurrentUserInfo().Profile.GetPropertyValue("LastName")%><br />
-                    Country: <% = UserController.GetCurrentUserInfo().Profile.GetPropertyValue("Country")%></div>
+                     FirstName: <% = UserController.Instance.GetCurrentUserInfo().Profile.GetPropertyValue("FirstName")%><br />
+                    LastName: <% = UserController.Instance.GetCurrentUserInfo().Profile.GetPropertyValue("LastName")%><br />
+                    Country: <% = UserController.Instance.GetCurrentUserInfo().Profile.GetPropertyValue("Country")%></div>
             </div>
 
             <div class="Item">
                 <h4>Current User PhotoUrl</h4>
-                <div class="Token">UserController.GetCurrentUserInfo().PhotoURL</div>
-                <div class="Example"><%=UserController.GetCurrentUserInfo().Profile.PhotoURL%></div>
-                <div class="Token">&lt;img src=&quot;&lt;%=UserController.GetCurrentUserInfo().Profile.PhotoURL%&gt;&quot; /&gt;</div>
-                <div class="Example"><img src="<%=UserController.GetCurrentUserInfo().Profile.PhotoURL%>" /></div>
+                <div class="Token">UserController.Instance.GetCurrentUserInfo().PhotoURL</div>
+                <div class="Example"><%=UserController.Instance.GetCurrentUserInfo().Profile.PhotoURL%></div>
+                <div class="Token">&lt;img src=&quot;&lt;%=UserController.Instance.GetCurrentUserInfo().Profile.PhotoURL%&gt;&quot; /&gt;</div>
+                <div class="Example"><img src="<%=UserController.Instance.GetCurrentUserInfo().Profile.PhotoURL%>" /></div>
             </div>
 
             <div class="Item">
@@ -123,10 +123,10 @@
 			
             <div class="Item">
                 <h4>Is Current User SuperUser / Host</h4>
-                <div class="Token">UserController.GetCurrentUserInfo().IsSuperUser</div>
-                <div class="Example"><%=UserController.GetCurrentUserInfo().IsSuperUser%></div>
-                 <div class="Token">You are &lt;%If NOT UserController.GetCurrentUserInfo().IsSuperUser%&gt;NOT&lt;%End If%&gt; a Superuser</div>
-                <div class="Example">You are <%If NOT UserController.GetCurrentUserInfo().IsSuperUser%>NOT<%End If%> a Superuser</div>
+                <div class="Token">UserController.Instance.GetCurrentUserInfo().IsSuperUser</div>
+                <div class="Example"><%=UserController.Instance.GetCurrentUserInfo().IsSuperUser%></div>
+                 <div class="Token">You are &lt;%If NOT UserController.Instance.GetCurrentUserInfo().IsSuperUser%&gt;NOT&lt;%End If%&gt; a Superuser</div>
+                <div class="Example">You are <%If NOT UserController.Instance.GetCurrentUserInfo().IsSuperUser%>NOT<%End If%> a Superuser</div>
             </div>
 
             <div class="Item">
